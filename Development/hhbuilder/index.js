@@ -7,3 +7,14 @@ window.onload = (event) => {
     submitButton.addEventListener("click", submitFamily)
 }
 
+function getRelationship() {
+    let relationshipInput = document.querySelector('select[name="rel"]')
+    let relationshipValue = relationshipInput.value
+
+    if (relationshipValue === '') {
+        alert("You must choose the appropriate relationship.")
+        return
+    }
+    return relationshipValue
+
+}
