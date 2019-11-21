@@ -1,3 +1,9 @@
+# To test my homework submission, simply open the index.html file, try adding family members, and submitting them as a household! 
+
+
+
+
+
 # Household builder
 
 Your application needs a way to capture information about a household applying
