@@ -18,3 +18,10 @@ function getRelationship() {
     return relationshipValue
 
 }
+
+function getSmoker() {
+    let smokerInput = document.querySelector('input[name="smoker"]')
+    let smokerValue = smokerInput.checked
+
+    return smokerValue
+}
