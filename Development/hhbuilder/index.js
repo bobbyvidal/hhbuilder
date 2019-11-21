@@ -46,3 +46,9 @@ function createButton() {
 
     return btn
 }
+
+function removeFamilyMember() {
+
+    this.parentNode.remove()
+
+}
