@@ -52,3 +52,32 @@ function removeFamilyMember() {
     this.parentNode.remove()
 
 }
+
+function addFamilyMember(event) {
+    
+    event.preventDefault();
+
+    let age = getAge();
+    let relationship = getRelationship();
+    let smoker = getSmoker();
+    let button = createButton();
+
+    console.log(relationship)
+    
+    let form = document.querySelector("form")
+    let householdList = document.querySelector('.household')
+    
+    if (age && relationship !== undefined ){
+        let familyMember = document.createElement("li")
+        familyMember.textContent = `${age} ${relationship} ${smoker}`
+        
+        familyMember.appendChild(button)
+        householdList.append(familyMember)
+        setTimeout( () => {
+            form.reset();
+        }, 500)
+    }
+
+    return
+    
+}
