@@ -81,3 +81,40 @@ function addFamilyMember(event) {
     return
     
 }
+
+function submitFamily(event) {
+    
+    event.preventDefault()
+    
+    let householdList = document.querySelector('.household')
+
+    if(householdList.getElementsByTagName('li').length <= 0){
+        alert("You are unable to submit a family with no one in it. Please add family members.")
+        return;
+    }    
+
+    let familyObject = { household: [] }
+
+    let members = householdList.children
+    for (let i = 0; i < members.length; i++){
+        let memberArray = members[i].textContent.split(' ')
+        if(memberArray[2] === "falseRemove"){
+            memberArray[2] = "false"
+        }
+        else if(memberArray[2] === "trueRemove"){
+            memberArray[2] = "true"
+        }
+        
+        let memberObject = {Age: parseInt(memberArray[0]), Relationship: memberArray[1], Smoker: memberArray[2]}
+        familyObject.household.push(memberObject)
+    }
+    
+    let debug = document.querySelector("pre")
+    
+    let stringifiedFamilyObject = JSON.stringify(familyObject)
+
+    debug.textContent = stringifiedFamilyObject
+    debug.style.display = "inline-block" ;
+
+ 
+}
