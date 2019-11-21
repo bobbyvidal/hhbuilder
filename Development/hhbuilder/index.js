@@ -25,3 +25,13 @@ function getSmoker() {
 
     return smokerValue
 }
+
+function createButton() {
+    
+    var btn = document.createElement("BUTTON")
+    btn.innerHTML = "Remove"
+
+    btn.addEventListener("click", removeFamilyMember)
+
+    return btn
+}
