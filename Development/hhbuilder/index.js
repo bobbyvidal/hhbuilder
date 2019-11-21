@@ -1,4 +1,3 @@
-
 window.onload = (event) => {
     let addButton = document.querySelector('.add')
     let submitButton = document.querySelector('button[type="submit"]')
@@ -61,8 +60,6 @@ function addFamilyMember(event) {
     let relationship = getRelationship();
     let smoker = getSmoker();
     let button = createButton();
-
-    console.log(relationship)
     
     let form = document.querySelector("form")
     let householdList = document.querySelector('.household')
@@ -113,8 +110,7 @@ function submitFamily(event) {
     
     let stringifiedFamilyObject = JSON.stringify(familyObject)
 
-    debug.textContent = stringifiedFamilyObject
+    debug.textContent = stringifiedFamilyObject.replace(/['"]+/g, '').replace(/,/g, ', ')
     debug.style.display = "inline-block" ;
-
  
 }
